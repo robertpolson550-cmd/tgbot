@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="color-scheme" content="light dark">
+  <title>Номера Литвы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="game.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <div class="coins" aria-label="Монеты">
+        <span class="coin" aria-hidden="true"></span>
+        <span id="coins-val">0</span>
+      </div>
+      <button class="link-btn" id="btn-rates" type="button">Шансы</button>
+    </header>
+
+    <main>
+      <section class="view" id="view-pull" aria-label="Выбить номер"></section>
+      <section class="view" id="view-collection" aria-label="Коллекция" hidden></section>
+      <section class="view" id="view-more" aria-label="Профиль" hidden></section>
+    </main>
+
+    <nav class="tabbar" role="tablist" aria-label="Разделы">
+      <button role="tab" type="button" data-tab="pull" aria-selected="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 12h2M11 12h2M16 12h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span>Выбить</span>
+      </button>
+      <button role="tab" type="button" data-tab="collection" aria-selected="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></g></svg>
+        <span>Коллекция</span>
+      </button>
+      <button role="tab" type="button" data-tab="more" aria-selected="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><circle cx="5.5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18.5" cy="12" r="1.8"/></g></svg>
+        <span>Ещё</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="layers"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
